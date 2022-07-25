@@ -83,7 +83,7 @@ const CreateListing = () => {
       location =
         data.status === 'ZERO_RESULTS'
           ? undefined
-          : data.results[0]?.formatted_address
+          : data.results[0]?.formatted_address;
 
       if (location === undefined || location.includes('undefined')) {
         setLoading(false)
@@ -93,7 +93,6 @@ const CreateListing = () => {
     } else {
       geolocation.lat = latitude
       geolocation.lng = longitude
-      location = address;
     }
 
     // Store images in firebase
@@ -145,9 +144,9 @@ const CreateListing = () => {
       timestamp: serverTimestamp()
     }
 
+    formDataCopy.location = address;
     delete formDataCopy.images;
     delete formDataCopy.address;
-    location && (formDataCopy.location = location);
     !formDataCopy.offerr && delete formDataCopy.discountedPrice;
 
     const docRef = await addDoc(collection(db, 'listings'), formDataCopy);
