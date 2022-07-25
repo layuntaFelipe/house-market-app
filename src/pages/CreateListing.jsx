@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useRef} from 'react';
 import {getAuth, onAuthStateChanged} from 'firebase/auth';
 import {getStorage, ref, uploadBytesResumable, getDownloadURL} from 'firebase/storage';
-import {addCod, addDoc, collection, serverTimestamp} from 'firebase/firestore';
+import {addDoc, collection, serverTimestamp} from 'firebase/firestore';
 import {db} from '../firebase.config';
 import {v4 as uuidv4} from 'uuid';
 import { useNavigate } from 'react-router-dom';
