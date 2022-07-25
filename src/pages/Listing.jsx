@@ -6,6 +6,9 @@ import {getAuth} from 'firebase/auth';
 import {db} from '../firebase.config';
 import Spinner from '../components/Spinner';
 import shareIcon from '../assets/svg/shareIcon.svg';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 
 const Listing = () => {
  const [listing, setListing] = useState(null);
@@ -37,7 +40,21 @@ const Listing = () => {
 
   return (
     <main>
-     {/* SLIDER */}
+      <Swiper
+        slidesPerView={1}
+        pagination={{ clickable: true }} 
+        modules={[Navigation, Pagination, Scrollbar, A11y]}
+        navigation
+        scrollbar={{ draggable: true }}
+        onSwiper={(swiper) => console.log(swiper)}
+        onSlideChange={() => console.log('slide change')}
+        >
+        {listing.imageUrls.map((url, index) => (
+          <SwiperSlide key={index}>
+            <div style={{background: `url(${listing.imageUrls[index]}) center no-repeat`, backgroundSize:'cover' , width:'100%', height:'300px', position: 'relative'}}></div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
 
      <div className="shareIconDiv" onClick={() => {
       navigator.clipboard.writeText(window.location.href);
