@@ -1,6 +1,7 @@
 import React, {useState, useEffect, useRef} from 'react';
 import {getAuth, onAuthStateChanged} from 'firebase/auth';
 import {getStorage, ref, uploadBytesResumable, getDownloadURL} from 'firebase/storage';
+import {addCod, addDoc, collection, serverTimestamp} from 'firebase/firestore';
 import {db} from '../firebase.config';
 import {v4 as uuidv4} from 'uuid';
 import { useNavigate } from 'react-router-dom';
@@ -69,23 +70,29 @@ const CreateListing = () => {
 
     let geolocation = {}
     let location;
-    if(geolocationEnabled) {
-      const response = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${process.env.REACT_APP_GEOCODE_API_KEY}`);
+    if (geolocationEnabled) {
+      const response = await fetch(
+        `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${process.env.REACT_APP_GEOCODE_API_KEY}`
+      )
 
-      const data = await response.json();
+      const data = await response.json()
 
-      geolocation.lat = data.results[0]?.geometry.location.lat ?? 0;
-      geolocation.lng = data.results[0]?.geometry.location.lng ?? 0;
+      geolocation.lat = data.results[0]?.geometry.location.lat ?? 0
+      geolocation.lng = data.results[0]?.geometry.location.lng ?? 0
 
-      location = data.status === 'ZERO_RESULTS' ? undefined : data.results[0]?.formatted_address;
+      location =
+        data.status === 'ZERO_RESULTS'
+          ? undefined
+          : data.results[0]?.formatted_address
 
-      if(location === undefined || location.includes('undefined')){
-        setLoading(false);
-        toast.error('Please enter a correct address');
+      if (location === undefined || location.includes('undefined')) {
+        setLoading(false)
+        toast.error('Please enter a correct address')
+        return
       }
     } else {
-      geolocation.lat = latitude;
-      geolocation.lng = longitude;
+      geolocation.lat = latitude
+      geolocation.lng = longitude
       location = address;
     }
 
@@ -124,16 +131,29 @@ const CreateListing = () => {
       });
     }
 
-    const imgUrls = await Promise.all(
+    const imageUrls = await Promise.all(
       [...images].map((image) => storeImage(image)) 
     ).catch(() => {
       setLoading(false);
       toast.error('Images NOT uploaded');
     })
 
-    console.log(imgUrls);
+    const formDataCopy = {
+      ...formData,
+      imageUrls,
+      geolocation,
+      timestamp: serverTimestamp()
+    }
 
-    setLoading(false)
+    delete formDataCopy.images;
+    delete formDataCopy.address;
+    location && (formDataCopy.location = location);
+    !formDataCopy.offerr && delete formDataCopy.discountedPrice;
+
+    const docRef = await addDoc(collection(db, 'listings'), formDataCopy);
+    setLoading(false);
+    toast.success('Listing Success')
+    navigate(`/category/${formDataCopy.type}/${docRef.id}`)
   }
 
   const onMutate = (e) => {
