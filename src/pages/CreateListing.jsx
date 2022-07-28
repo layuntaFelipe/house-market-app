@@ -52,16 +52,14 @@ const CreateListing = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
 
     setLoading(true);
 
     if(discountedPrice >= regularPrice) {
       setLoading(false);
-      toast.error('Discounted price needs to bee less than regular price')
-      return
+      toast.error('Discounted price needs to bee less than regular price');
+      return;
     }
-
     if(images.length > 6){
       setLoading(false);
       toast.error('Max 6 Images')
@@ -72,28 +70,29 @@ const CreateListing = () => {
     let location;
     if (geolocationEnabled) {
       const response = await fetch(
-        `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${process.env.REACT_APP_GEOCODE_API_KEY}`
+        `https://api.geoapify.com/v1/geocode/search?text=${address}&apiKey=733f84036109444a8bec890ad03499bb`
       )
 
       const data = await response.json()
 
-      geolocation.lat = data.results[0]?.geometry.location.lat ?? 0
-      geolocation.lng = data.results[0]?.geometry.location.lng ?? 0
+      geolocation.lat = data.features[0]?.geometry.coordinates[1] ?? 0
+      geolocation.lng = data.features[0]?.geometry.coordinates[0] ?? 0
 
-      location =
-        data.status === 'ZERO_RESULTS'
-          ? undefined
-          : data.results[0]?.formatted_address;
+      location = data.features.length === 0 ? undefined : data.features[0].properties.formatted;
 
       if (location === undefined || location.includes('undefined')) {
         setLoading(false)
         toast.error('Please enter a correct address')
         return
       }
+
     } else {
-      geolocation.lat = latitude
-      geolocation.lng = longitude
+      geolocation.lat = latitude;
+      geolocation.lng = longitude;
+      location = address;
     }
+
+    setLoading(false);
 
     // Store images in firebase
     const storeImage = async (image) => {
