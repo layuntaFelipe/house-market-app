@@ -7,25 +7,23 @@ House Market Web is a React app mainly focused on Firebase functionality and des
 
 This project was great for me to learn more about how to talk to an API, work with Firebase Storage and Authentication, Routers, and Maps.
 
-Check the website out on: https://crypto-nummum.vercel.app/
-## About the API used
-
-For this project I used the CoinGecko API, a very easy going no key API, with clean documentation and HTTPS. <br />
-With the heelp of this API, you get all the market information about all the cryptos out there in the world. From the most known one like: Bitcoin, to Baby Doge Coin
+Check the website out on: https://house-market-app-plum.vercel.app/
 
 ## Roadmap
 
-- Understand how the CoinGecko API works
-- Layout the design for the page
-- Use Axios to get the data from the API
-- Use UseState and UseEffect to store and load the data from the API to their own components
-- Use React-Router-Dom to link the home page to the specific coin page.
-- Finish styling website to perfection
+- Understand how a housing market works overall;
+- Setup the data on firebase, authorization, and Firestore with users and house listings, and its logic;
+- Put dummy data on firestore, and authorization for testing;
+- Create register and login forms;
+- Fetch the data from each user;
+- Create a form for posting houses for sale or rent;
+- Working around the Leaflet Map API to show the user the location of the house posted on for sale/rent;
+- Finish styling the website using Toastify, and Swiper to make the overall functionality and presentation of the website better;
 
 
 ## Tech Stack
-
-**Client:** React, Axios, React-Router-Dom
+<img src="https://cdn.icon-icons.com/icons2/2699/PNG/512/reactjs_logo_icon_168875.png" alt="ReactJS" width="40" height="40" style="max-width:100%;"></img>
+<img src="https://img.icons8.com/color/344/firebase.png" alt="Firebase" width="40" height="40" style="max-width:100%;"></img>
 
 
 ## Website Preview
@@ -40,4 +38,7 @@ With the heelp of this API, you get all the market information about all the cry
 
 ## Acknowledgements
 
- - [Coin Gecko](https://github.com/coingecko)
+ - [Firebase](https://github.com/firebase/)
+ - [Leaflet] (https://github.com/Leaflet/)
+ - [React-Toastify] (https://www.npmjs.com/package/react-toastify)
+ - [Swiper] (https://swiperjs.com/demos)
