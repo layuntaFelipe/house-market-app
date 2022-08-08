@@ -1,6 +1,6 @@
 <p align="center">
   <img align="center" src="https://github.com/layuntaFelipe/house-market-app/blob/master/src/assets/png/logoHouse.png" alt="Boxes Logo" width="120"/>
-  <h1 align="center">Crypto-Nummum </h1>
+  <h1 align="center">House Market App</h1>
 </p>
 
 Crypto-Nummum is a simple Crypto API web page with a clean design that helps you navigate and get to know more about your favorite crypto.
