@@ -3,7 +3,9 @@
   <h1 align="center">House Market App</h1>
 </p>
 
-Crypto-Nummum is a simple Crypto API web page with a clean design that helps you navigate and get to know more about your favorite crypto.
+House Market Web is a React app mainly focused on Firebase functionality and design for mobile first. House Market consists in a simple context of a customer when logged in, can check out houses for sale and rent in the database, and it can also create a house for sale and rent.
+
+This project was great for me to learn more about how to talk to an API, work with Firebase Storage and Authentication, Routers, and Maps.
 
 Check the website out on: https://crypto-nummum.vercel.app/
 ## About the API used
