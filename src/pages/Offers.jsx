@@ -88,7 +88,7 @@ const Offers = () => {
     <div className='category'>
       <header style={{display: 'flex', alignItems: 'center'}}>
         <img src={logoHouse} alt="" style={{width: '3.5rem', height: '3.5rem', marginRight: '1rem'}} />
-        <p className="pageHeader">Explore</p>
+        <p className="pageHeader">Offers</p>
       </header>
 
      {loading ? (
