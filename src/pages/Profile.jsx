@@ -17,6 +17,7 @@ import { toast } from 'react-toastify'
 import ListingItem from '../components/ListingItem'
 import arrowRight from '../assets/svg/keyboardArrowRightIcon.svg'
 import homeIcon from '../assets/svg/homeIcon.svg'
+import logoHouse from '../assets/png/logoHouse.png';
 
 function Profile() {
   const auth = getAuth()
@@ -108,7 +109,10 @@ function Profile() {
   return (
     <div className='profile'>
       <header className='profileHeader'>
-        <p className='pageHeader'>My Profile</p>
+        <div style={{display: 'flex', alignItems: 'center'}}>
+          <img src={logoHouse} alt="" style={{width: '3.5rem', height: '3.5rem', marginRight: '1rem'}} />
+          <p className='pageHeader'>My Profile</p>
+        </div>
         <button type='button' className='logOut' onClick={onLogout}>
           Logout
         </button>

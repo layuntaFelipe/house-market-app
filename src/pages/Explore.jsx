@@ -3,11 +3,13 @@ import { Link } from 'react-router-dom';
 import SliderComp from '../components/SliderComp';
 import rentCategoryImage from '../assets/jpg/rentCategoryImage.jpg';
 import sellCategoryImage from '../assets/jpg/sellCategoryImage.jpg';
+import logoHouse from '../assets/png/logoHouse.png';
 
 const Explore = () => {
   return (
     <div className='explore'>
-      <header>
+      <header style={{display: 'flex', alignItems: 'center'}}>
+        <img src={logoHouse} alt="" style={{width: '3.5rem', height: '3.5rem', marginRight: '1rem'}} />
         <p className="pageHeader">Explore</p>
       </header>
 

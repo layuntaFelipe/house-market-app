@@ -5,6 +5,7 @@ import { db } from '../firebase.config';
 import {toast} from 'react-toastify';
 import Spinner from '../components/Spinner';
 import ListingItem from '../components/ListingItem';
+import logoHouse from '../assets/png/logoHouse.png';
 
 const Category = () => {
   const [listings, setListings] = useState(null);
@@ -89,11 +90,12 @@ const Category = () => {
 
   return (
     <div className='category'>
-     <header>
-      <p className="pageHeader">
-       {params.categoryName === 'rent' ? 'Places for rent' : 'Places for sale'}
-      </p>
-     </header>
+      <header style={{display: 'flex', alignItems: 'center'}}>
+        <img src={logoHouse} alt="" style={{width: '3.5rem', height: '3.5rem', marginRight: '1rem'}} />
+        <p className="pageHeader">
+          {params.categoryName === 'rent' ? 'Places for rent' : 'Places for sale'}
+        </p>
+      </header>
 
      {loading ? (
       <Spinner/>

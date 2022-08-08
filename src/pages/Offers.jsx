@@ -4,6 +4,7 @@ import { db } from '../firebase.config';
 import {toast} from 'react-toastify';
 import Spinner from '../components/Spinner';
 import ListingItem from '../components/ListingItem';
+import logoHouse from '../assets/png/logoHouse.png';
 
 const Offers = () => {
   const [listings, setListings] = useState(null);
@@ -85,10 +86,9 @@ const Offers = () => {
 
   return (
     <div className='category'>
-      <header>
-        <p className="pageHeader">
-          Offers
-        </p>
+      <header style={{display: 'flex', alignItems: 'center'}}>
+        <img src={logoHouse} alt="" style={{width: '3.5rem', height: '3.5rem', marginRight: '1rem'}} />
+        <p className="pageHeader">Explore</p>
       </header>
 
      {loading ? (

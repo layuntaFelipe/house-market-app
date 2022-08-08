@@ -41,11 +41,14 @@ const SliderComp = () => {
 
   return listings && (
     <>
-      <p className="exploreHeading">Recommended</p>
+      <div className='profileHeader'>
+        <p className="exploreHeading">Recommended Houses</p>
+        <p className="exploreHeading" style={{color: '#999'}}>Slide for more</p>
+      </div>
       <Swiper slidesPerView={1} pagination={{clickable: true}}>
         {listings.map(({data, id}) => (
           <SwiperSlide key={id} onClick={() => navigate(`/category/${data.type}/${id}`)}>
-            <div className="swiperSlideImg" style={{background: `url(${data.imageUrls[0]}) center no-repeat`, backgroundSize: 'cover', width: '100%', height: '200px', borderRadius: '20px'}}>
+            <div className="swiperSlideImg" style={{background: `url(${data.imageUrls[0]}) center no-repeat`, backgroundSize: 'cover', width: '100%', height: '200px', borderRadius: '20px', cursor: 'pointer'}}>
               <p className="swiperSlideText">{data.name}</p>
               <p className="swiperSlidePrice">${data.discountedPrice ?? data.regularPrice}
               {data.type === 'rent' && ' / month'}</p>

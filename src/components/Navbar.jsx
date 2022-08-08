@@ -15,36 +15,36 @@ const Navbar = () => {
  }
 
   return (
-   <footer className='navbar'>
-   <nav className='navbarNav'>
-     <ul className='navbarListItems'>
-       <li className='navbarListItem' onClick={() => navigate('/')}>
-         <ExploreIcon
-           fill={pathMathRoute('/') ? '#2c2c2c' : '#8f8f8f'}
-           width='36px'
-           height='36px'
-         />
-         <p className={pathMathRoute('/') ? 'navbarListItemNameActive' : 'navbarListItemName'}>Explore</p>
-       </li>
-       <li className='navbarListItem' onClick={() => navigate('/offers')}>
-         <OfferIcon
-           fill={pathMathRoute('/offers') ? '#2c2c2c' : '#8f8f8f'}
-           width='36px'
-           height='36px'
-         />
-         <p className={pathMathRoute('/offers') ? 'navbarListItemNameActive' : 'navbarListItemName'}>Offers</p>
-       </li>
-       <li className='navbarListItem' onClick={() => navigate('/profile')}>
-         <PersonOutlineIcon
-           fill={pathMathRoute('/profile') ? '#2c2c2c' : '#8f8f8f'}
-           width='36px'
-           height='36px'
-         />
-         <p className={pathMathRoute('/profile') ? 'navbarListItemNameActive' : 'navbarListItemName'}>Profile</p>
-       </li>
-     </ul>
-   </nav>
- </footer>
+    <footer className='navbar'>
+    <nav className='navbarNav'>
+      <ul className='navbarListItems'>
+        <li className='navbarListItem' onClick={() => navigate('/')}>
+          <ExploreIcon
+            fill={pathMathRoute('/') ? '#0c6' : '#8f8f8f'}
+            width='36px'
+            height='36px'
+          />
+          <p className={pathMathRoute('/') ? 'navbarListItemNameActive' : 'navbarListItemName'}>Explore</p>
+        </li>
+        <li className='navbarListItem' onClick={() => navigate('/offers')}>
+          <OfferIcon
+            fill={pathMathRoute('/offers') ? '#0c6' : '#8f8f8f'}
+            width='36px'
+            height='36px'
+          />
+          <p className={pathMathRoute('/offers') ? 'navbarListItemNameActive' : 'navbarListItemName'}>Offers</p>
+        </li>
+        <li className='navbarListItem' onClick={() => navigate('/profile')}>
+          <PersonOutlineIcon
+            fill={pathMathRoute('/profile') ? '#0c6' : '#8f8f8f'}
+            width='36px'
+            height='36px'
+          />
+          <p className={pathMathRoute('/profile') ? 'navbarListItemNameActive' : 'navbarListItemName'}>Profile</p>
+        </li>
+      </ul>
+    </nav>
+  </footer>
   )
 }
 
