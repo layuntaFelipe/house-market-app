@@ -39,6 +39,6 @@ Check the website out on: https://house-market-app-plum.vercel.app/
 ## Acknowledgements
 
  - [Firebase](https://github.com/firebase/)
- - [Leaflet] (https://github.com/Leaflet/)
- - [React-Toastify] (https://www.npmjs.com/package/react-toastify)
- - [Swiper] (https://swiperjs.com/demos)
+ - [Leaflet](https://github.com/Leaflet/)
+ - [React-Toastify](https://www.npmjs.com/package/react-toastify)
+ - [Swiper](https://swiperjs.com/demos)
