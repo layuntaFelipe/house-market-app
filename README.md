@@ -7,7 +7,7 @@ House Market Web is a React app mainly focused on Firebase functionality and des
 
 This project was great for me to learn more about how to talk to an API, work with Firebase Storage and Authentication, Routers, and Maps.
 
-Check the website out on: https://house-market-app-plum.vercel.app/
+Check the website out at: https://house-market-app-plum.vercel.app/
 
 ## Roadmap
 
