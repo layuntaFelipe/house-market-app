@@ -29,6 +29,8 @@ Check the website out at: https://house-market-app-plum.vercel.app/
 ## Website Preview
 
 <p float="left">
+  <img align="center" src="https://raw.githubusercontent.com/layuntaFelipe/house-market-app/master/screenshots/Screen%20Shot%202022-12-08%20at%209.14.38%20PM.png" alt="Demo" width="800"/> <br/><br/>
+  <img align="center" src="https://raw.githubusercontent.com/layuntaFelipe/house-market-app/master/screenshots/Screen%20Shot%202022-12-08%20at%209.15.07%20PM.png" alt="Demo" width="800"/> <br/><br/>
   <img align="center" src="https://github.com/layuntaFelipe/house-market-app/blob/master/screenshots/Screen%20Shot%202022-08-09%20at%201.35.52%20AM.png" alt="Demo" width="800"/> <br/><br/>
   <img align="center" src="https://github.com/layuntaFelipe/house-market-app/blob/master/screenshots/Screen%20Shot%202022-08-09%20at%201.37.13%20AM.png" alt="Web first page" width="500"/> <br/><br/>
   <img align="center" src="https://github.com/layuntaFelipe/house-market-app/blob/master/screenshots/Screen%20Shot%202022-08-09%20at%201.37.24%20AM.png" alt="Web first page" width="500"/> <br/><br/>
